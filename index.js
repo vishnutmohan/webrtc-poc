@@ -13,6 +13,7 @@ var app = http
     .listen(process.env.PORT || 8080);
 
 var io = socketIO.listen(app);
+io.origins('*:*');
 io.sockets.on('connection', function(socket) {
     // convenience function to log server messages on the client
     function log() {
